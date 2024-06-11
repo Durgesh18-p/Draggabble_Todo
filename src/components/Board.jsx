@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import { useDrop } from "react-dnd";
 import Task from "./Task";
@@ -26,7 +27,7 @@ const Board = ({ name, tasks, onDrop, onAddTask }) => {
       }`}
     >
       <h2 className="text-xl font-bold mb-4">{name}</h2>
-      {tasks.map((task) => (
+      {tasks?.map((task) => (
         <Task key={task.id} task={task} />
       ))}
       <input
