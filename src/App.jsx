@@ -49,7 +49,7 @@ const App = () => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="app p-4">
+      <div className="app p-4 ">
         <div className="flex flex-wrap">
           {boards.map((board) => (
             <Board
