@@ -8,7 +8,7 @@ const Board = ({ name, tasks, onDrop, onAddTask }) => {
     accept: "TASK",
     drop: (item) => onDrop(item.id, name),
     collect: (monitor) => ({
-      isOver: !!monitor.isOver(),
+      isOver: !monitor.isOver(),
     }),
   });
 
@@ -22,11 +22,11 @@ const Board = ({ name, tasks, onDrop, onAddTask }) => {
   return (
     <div
       ref={drop}
-      className={`p-4 w-full md:w-1/3 m-2 bg-gray-100 rounded shadow ${
+      className={`p-4 w-full  md:w-1/3 m-2 bg-gray-100 rounded shadow ${
         isOver ? "bg-gray-300" : ""
       }`}
     >
-      <h2 className="text-xl font-bold mb-4">{name}</h2>
+      <h2 className="text-xl font-bold mb-4 p">{name}</h2>
       {tasks?.map((task) => (
         <Task key={task.id} task={task} />
       ))}
